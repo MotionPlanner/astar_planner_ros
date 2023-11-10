@@ -22,8 +22,8 @@ find_package(catkin REQUIRED COMPONENTS
   tf2_ros
 )
 
-find_package(glog REQUIRED)
-
+ 
+find_package(glog)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES astar_planner_ros
@@ -43,7 +43,7 @@ include_directories(
 )
 
 add_library(astar_planner src/astar_planner.cpp src/heap.cpp)
-target_link_libraries(astar_planner glog::glog)
+target_link_libraries(astar_planner glog)
 
 add_executable(astar_planner_test src/astar_planner_test.cpp)
 target_link_libraries(astar_planner_test astar_planner ${catkin_LIBRARIES})
